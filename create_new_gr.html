@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 shrink-to-fit=no, user-scalable=0">
+
+  <title>ASN</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <meta name="theme-color" content="#0B5E97">
+  <link rel="icon" type="image/png" href="assets/images/logo.png" sizes="194x194">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Play|Titillium+Web|Roboto+Condensed|Changa|Lobster|Ubuntu&display=swap" rel="stylesheet">
+
+  <!-- Style files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!--- Datatables --->
+  <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
+  <style type="text/css">
+  /*Hide Input arrows*/
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  .main_div{
+    width: 100%;
+  }
+  #example tbody td{
+    padding-left: .25rem;
+    padding-right: .25rem;
+  }
+  .table_padding thead tr th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    white-space: nowrap;
+  }
+  .table_padding tbody tr td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .table_fixed_height{
+    max-height: 53vh;
+    overflow-y: auto;
+    width: 100%;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  .toggle-on, .toggle-off{
+    width: 43px!important;
+  }
+  .parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+  }
+  .parsley-required{
+    display: none;
+  }
+  .parsley-errors-list {
+    color: red;
+    list-style-type: none;
+    font-size: 14px;
+    margin-left: -37px;
+}
+
+.DPEN{
+      position: static!important;
+}
+.DPDE{
+      position: sticky!important;
+}
+</style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <header>
+    <nav class="navbar navbar-expand-sm justify-content-center py-0 shadow fixed-top bg-white" style="border-bottom: 3px solid #17a2b8;">
+      <a  class="navbar-brand py-1 mr-0" href="#" onclick="goBack()">
+        <i class="fas fa-angle-left pl-2" style="font-size: 30px;"></i>
+      </a>
+      <div class="navbar-brand pl-3 py-1">
+        <a href="">
+          <img src="assets/images/logo2.png" height="50px">
+        </a>
+      </div>
+         <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link">
+                <h3 class="mb-0">400022 - ARABIAN HEALTH CARE SUPPLY COMPANY</h3></a>
+            </li>
+          </ul>
+              <div class="navbar-brand text-right mx-0">
+                <a href="">
+                          <i class="fas fa-power-off"></i> Logout
+                </a>
+              </div>
+            <a class="navbar-brand text-right mx-0"></a>
+    </nav>
+  </header>
+  <main>
+  <div class="container-fluid main_div mt-5 pt-4">
+    <div class="row">
+      <div class="col-md-2 col-sm-2 col-12 text-center">
+      
+      </div>
+      <div class="col-md-8 col-sm-8 col-12 text-center">         
+        <h4 class="text-center"><b></b></h4>
+      </div>
+      <div class="col-md-2 col-sm-2 col-12 pb-2 text-center">
+        
+      </div>
+    </div>
+    <div class="mb-1" style="border: 2px solid #dee2e6">
+    <form class="" action="">
+        <div class="row p-1 mx-0">
+          <div class="col-md-6">
+            <table class="table table-borderless mb-0">
+              <tbody><tr>
+                <td class="py-1 px-1" width="25%"><b>Vendor Name</b></td>
+                <td class="py-1 px-0" width="1%">:</td>
+                <td class="py-1 px-1">Arabian Health Care Supply Company</td>
+              </tr> 
+              <tr>
+                <td class="py-1 px-1" width="25%"><b>Vendor No</b></td>
+                <td class="py-1 px-0" width="1%">:</td>
+                <td class="py-1 px-1">400022 </td>
+              </tr> 
+              <tr>
+                <td class="py-1 px-1" width="25%"><b>Pallet Count</b></td>
+                <td class="py-1 px-0" width="1%">:</td>
+                <td class="py-1 px-1">
+                  <input type="text" class="form-control-sm" id="total_pallets" name="total_pallet_count" value="0" readonly="" style="width:30%;border: 1px lightgray"></td>
+              </tr> 
+              <tr>
+              <td class="py-1 px-1"><b>Invoice No </b></td>
+              <td class="py-1 px-0">:</td>
+              <td class="py-1 px-1"><input class="form-control" style="width:50%;" type="text" name="invoice_no" required=""></td>
+            </tr>
+            </tbody></table>
+          </div>
+          <div class="col-md-6">
+            <table class="table table-borderless mb-0">
+              <tbody><tr>
+                <td class="py-1 px-1"><b>Ship To</b></td>
+                <td class="py-1 px-0">:</td>
+                <td class="py-1 px-1">
+                  <select class="form-control" name="ship_to" id="ship_too" required="">
+                    <option value="">Select Location</option>
+                    <option value="1">  Emergency stock-Riyadh</option>
+                    <option value="2"> Emergency stock-Jeddha</option>
+                    <option value="3"> Emergency stock-Dammam</option>
+                  </select>
+              </td>
+            </tr>
+                      
+            <tr>
+              <td class="py-1 px-1"><b>Delivery Date</b></td>
+              <td class="py-1 px-0">:</td>
+              <td class="py-1 px-1"><input class="form-control" type="date" id="datepicker" style="width:50%;" name="delivery_date" onchange="chk_pallet()" value="2020-07-28" required="">
+               <span class="pallet_error"></span>
+              </td>
+            </tr>
+             <tr>
+              <td class="py-1 px-1"><b>Delivery Time</b></td>
+              <td class="py-1 px-0">:</td>
+              <td class="py-1 px-1">
+                <select class="form-control" id="selectTime" onchange="time_chk()" name="delivery_time" style="width:50%;" required="">
+                  <option value="00:00:00">Select Delivery Time</option>
+                  <option value="09:00:00">09:00 Am</option>
+                  <option value="10:00:00">10:00 Am</option>
+                  <option value="11:00:00">11:00 Am</option>
+                  <option value="12:00:00">12:00 Am</option>
+                  <option value="01:00:00">01:00 Pm</option>
+                  <option value="02:00:00">02:00 Pm</option>
+                  <option value="03:00:00">03:00 Pm</option>
+                  <option value="04:00:00">04:00 Pm</option>
+                </select>
+              <span class="time_error"></span>
+              </td>
+            </tr>
+            
+            
+          </tbody></table>
+         
+      </div>
+
+        </div>
+      </form> 
+      </div> <!--========= border close ========-->
+      <div class="col-12 table_fixed_height text-center px-0">
+        <table class="table table-bordered mx-auto po_table table_padding mb-0 dataTable no-footer" id="example" role="grid" aria-describedby="example_info">
+          <thead class="bg-info text-white">
+            <tr>
+              <th class="px-1" width="5%">ALL&nbsp;<input type="checkbox" id="chks"></th>
+              <th class="px-1" width="6%">PO No</th>
+              <th class="px-1" width="6%">PO Item No</th>
+              <th class="px-1" width="12%">Nupco Code</th>
+              <th class="px-1" width="">Material Description</th><!-- 
+              <th class="px-1" width="12%">MODA Code</th> -->
+              <th class="px-1" width="8%">Open Qty</th>
+              <th class="px-1" width="8%">Delivery Qty</th>        
+              <th class="px-1" width="7%">Pallet Count</th>        
+              <th class="px-1" width="8%">Batch</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          <tr role="row" class="odd">
+               
+                <td class="px-1 sorting_1">
+                  <input type="checkbox" class="chk" name="rgr_selection[]" id="chk-14" value="14">
+                </td>
+                 <td class="px-1">
+                  4500015950                </td>
+                <td class="px-1">
+                  <input class="form-control px-1  text-center" type="text" name="po_item-14" value="10" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center" type="text" name="nupco_material-14" value="4229540700100" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1" type="text" name="nupco_material_description-14" value="N95 MASK MED /SMALL SIZE / DUCK SHAPE" readonly="" style="overflow: visible;">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1" type="text" name="order_quantity-14" value="19,562.00" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1 request_qty_14" type="number" min="0" max="19562.00" name="delivery_qty-14" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center totalpallet chkss chk-14in" type="text" name="pallet-14" onkeyup="chk_pallet()" disabled="" required="">
+                </td>
+                <td class="px-1">
+                  <button class="btn btn-warning chk-14in chkss" autofocus="" type="button" data-toggle="modal" data-target="#batch_modal" disabled="">Batch</button>
+                </td>
+              </tr><tr role="row" class="even">
+               
+                <td class="px-1 sorting_1">
+                  <input type="checkbox" class="chk" name="rgr_selection[]" id="chk-15" value="15">
+                </td>
+                 <td class="px-1">
+                  4500015950                </td>
+                <td class="px-1">
+                  <input class="form-control px-1  text-center" type="text" name="po_item-15" value="20" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center" type="text" name="nupco_material-15" value="4229540700300" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1" type="text" name="nupco_material_description-15" value="N95 MASK REG. /LARGE SIZE / DUCK SHAPE" readonly="" style="overflow: visible;">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1" type="text" name="order_quantity-15" value="97,765.00" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1 request_qty_15" type="number" min="0" max="97765.00" name="delivery_qty-15" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center totalpallet chkss chk-15in" type="text" name="pallet-15" onkeyup="chk_pallet()" disabled="" required="">
+                </td>
+                <td class="px-1">
+                  <button class="btn btn-warning chk-15in chkss" autofocus="" type="button" data-toggle="modal" data-target="#batch_modal-15" disabled="">Batch</button>
+                </td>
+              </tr><tr role="row" class="odd">
+               
+                <td class="px-1 sorting_1">
+                  <input type="checkbox" class="chk" name="rgr_selection[]" id="chk-37" value="37">
+                </td>
+                 <td class="px-1">
+                  4500015967                </td>
+                <td class="px-1">
+                  <input class="form-control px-1  text-center" type="text" name="po_item-37" value="10" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center" type="text" name="nupco_material-37" value="4229540700100" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1" type="text" name="nupco_material_description-37" value="N95 MASK MED /SMALL SIZE / DUCK SHAPE" readonly="" style="overflow: visible;">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1" type="text" name="order_quantity-37" value="261,322.00" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1 request_qty_37" type="number" min="0" max="261322.00" name="delivery_qty-37" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center totalpallet chkss chk-37in" type="text" name="pallet-37" onkeyup="chk_pallet()" disabled="" required="">
+                </td>
+                <td class="px-1">
+                  <button class="btn btn-warning chk-37in chkss" autofocus="" type="button" data-toggle="modal" data-target="#batch_modal-37" disabled="">Batch</button>
+                </td>
+              </tr><tr role="row" class="even">
+               
+                <td class="px-1 sorting_1">
+                  <input type="checkbox" class="chk" name="rgr_selection[]" id="chk-38" value="38">
+                </td>
+                 <td class="px-1">
+                  4500015967                </td>
+                <td class="px-1">
+                  <input class="form-control px-1  text-center" type="text" name="po_item-38" value="20" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center" type="text" name="nupco_material-38" value="4229540700300" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1" type="text" name="nupco_material_description-38" value="N95 MASK REG. /LARGE SIZE / DUCK SHAPE" readonly="" style="overflow: visible;">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1" type="text" name="order_quantity-38" value="635,755.00" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1 request_qty_38" type="number" min="0" max="635755.00" name="delivery_qty-38" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center totalpallet chkss chk-38in" type="text" name="pallet-38" onkeyup="chk_pallet()" disabled="" required="">
+                </td>
+                <td class="px-1">
+                  <button class="btn btn-warning chk-38in chkss" autofocus="" type="button" data-toggle="modal" data-target="#batch_modal-38" disabled="">Batch</button>
+                </td>
+              </tr><tr role="row" class="odd">
+               
+                <td class="px-1 sorting_1">
+                  <input type="checkbox" class="chk" name="rgr_selection[]" id="chk-39" value="39">
+                </td>
+                 <td class="px-1">
+                  4500015967                </td>
+                <td class="px-1">
+                  <input class="form-control px-1  text-center" type="text" name="po_item-39" value="30" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center" type="text" name="nupco_material-39" value="4713150200800" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1" type="text" name="nupco_material_description-39" value="WIPE DISINFECTANT ALCOHOL FREE" readonly="" style="overflow: visible;">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1" type="text" name="order_quantity-39" value="36,973.00" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1 request_qty_39" type="number" min="0" max="36973.00" name="delivery_qty-39" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center totalpallet chkss chk-39in" type="text" name="pallet-39" onkeyup="chk_pallet()" disabled="" required="">
+                </td>
+                <td class="px-1">
+                  <button class="btn btn-warning chk-39in chkss" autofocus="" type="button" data-toggle="modal" data-target="#batch_modal-39" disabled="">Batch</button>
+                </td>
+              </tr><tr role="row" class="even">
+               
+                <td class="px-1 sorting_1">
+                  <input type="checkbox" class="chk" name="rgr_selection[]" id="chk-40" value="40">
+                </td>
+                 <td class="px-1">
+                  4500015967                </td>
+                <td class="px-1">
+                  <input class="form-control px-1  text-center" type="text" name="po_item-40" value="40" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center" type="text" name="nupco_material-40" value="4228160310400" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1" type="text" name="nupco_material_description-40" value="PLAIN HAND WASH SOAP 1L" readonly="" style="overflow: visible;">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1" type="text" name="order_quantity-40" value="436,486.00" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1 request_qty_40" type="number" min="0" max="436486.00" name="delivery_qty-40" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center totalpallet chkss chk-40in" type="text" name="pallet-40" onkeyup="chk_pallet()" disabled="" required="">
+                </td>
+                <td class="px-1">
+                  <button class="btn btn-warning chk-40in chkss" autofocus="" type="button" data-toggle="modal" data-target="#batch_modal-40" disabled="">Batch</button>
+                </td>
+              </tr><tr role="row" class="odd">
+               
+                <td class="px-1 sorting_1">
+                  <input type="checkbox" class="chk" name="rgr_selection[]" id="chk-41" value="41">
+                </td>
+                 <td class="px-1">
+                  4500015967                </td>
+                <td class="px-1">
+                  <input class="form-control px-1  text-center" type="text" name="po_item-41" value="50" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center" type="text" name="nupco_material-41" value="4228160313100" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1" type="text" name="nupco_material_description-41" value="DISPENSER WALL MOUNTED FOR SOAP HANDWASH" readonly="" style="overflow: visible;">
+                </td>                <td class="px-1">
+                  <input class="form-control text-right px-1" type="text" name="order_quantity-41" value="64,675.00" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control text-right px-1 request_qty_41" type="number" min="0" max="64675.00" name="delivery_qty-41" readonly="">
+                </td>
+                <td class="px-1">
+                  <input class="form-control px-1 text-center totalpallet chkss chk-41in" type="text" name="pallet-41" onkeyup="chk_pallet()" disabled="" required="">
+                </td>
+                <td class="px-1">
+                  <button class="btn btn-warning chk-41in chkss" autofocus="" type="button" data-toggle="modal" data-target="#batch_modal-41" disabled="">Batch</button>
+                </td>
+              </tr></tbody>
+        </table>
+      </div>
+      <center class="mb-3 mt-1">
+        <button type="submit" name="submit" value="submit" class="btn btn-info">Submit ASN</button>
+      </center> 
+  </div>
+  </main> 
+  <footer>
+    <nav class="navbar fixed-bottom bg-white br_title p-0" style="border:none;">
+      <h6 class="mb-0" style="font-size: 12px;color: #17a2b8;font-weight: bold;">Nupco</h6>
+    </nav>
+  </footer>
+</div>
+<!-- The Modal -->
+<div class="modal" id="batch_modal">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header py-1">
+        <h4 class="modal-title mx-auto"><b>Batch</b></h4>
+        <button type="button" class="close ml-0 pl-0 pb-0" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <form id="temp_frm_<?=$value->id?>" data-parsley-validate="true"  name="temp_frm" action="<?= base_url()?>web/add_batch" method="post" >
+        <div class="modal-body pt-1"><span class="batch_res"></span>
+          <button class="float-right btn btn-info mb-1" type="button" onclick="add_newrow(<?=$value->id?>)">Add New</button>
+          <table class="table table-bordered" id="batch_table-<?=$value->id?>">
+            <thead class="bg-info text-white text-nowrap text-center">
+              <tr>
+                <th class="px-1" width="5%">Action</th>
+                <th>Batch Qty</th>
+                <th>Batch Number</th>
+                <th>Manufacture Date</th>
+                <th>Expiry Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <button class="btn btn-sm btn-danger" type="button" name="action2" style="line-height: 1;"disabled onclick="delete_newroww(this)">
+                    <span aria-hidden="true" style="font-size: 20px;">&times;</span>
+                  </button>
+                </td>
+                <td>
+                  <input class="form-control px-1 popup_qty_<?=$value->id?>" type="number" name="new_qty[]" required data-parsley-type="integer" data-parsley-error-message="Only Numeric Value">
+                </td>
+                <td>
+                  <input class="form-control px-1" type="text" data-parsley-type="alphanum" name="batch_no[]" required data-parsley-error-message="Only AlphaNumeric Value">
+                </td>
+                <td>
+                  <input class="form-control px-1 datepicker" type="date" onkeydown="return false" id="startDate-0" name="manu_date_qty[]">
+                </td>
+                <td>
+                  <input class="form-control px-1 datepicker" type="date" onkeydown="return false" id="endDate-0" name="expiry_date_qty[]">
+                </td>
+              </tr>
+              <input type="hidden" id="bat_row_<?=$value->id?>" name="bat_row_<?=$value->id?>" value="<?=$value->open_qty?>" >          
+            </tbody>
+          </table>
+        </div>
+        <!-- Modal footer -->
+        <input type="hidden" name="vendor_no" id="<?=$value->vendor_no?>">
+        <input type="hidden" name="po_no" value="<?=$value->po_no?>">
+        <input type="hidden" name="po_item_no" value="<?=$value->po_item?>">
+        <div class="modal-footer justify-content-center">
+          <button type="button" onclick="submitBtn(<?=$value->id?>)"  class="btn btn-success">Submit</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </form> 
+    </div>
+  </div>
+</div>
+<!-- script files -->
+  <script src="https://kit.fontawesome.com/80895110d5.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <!--- Datatables --->
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
+  <!--- DatePicker --->
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="http://parsleyjs.org/dist/parsley.min.js" type="text/javascript"></script>
+ 
+  <script>
+function time_chk(){
+  var selectTime = $("#selectTime").val();
+  var selectDate = $("#datepickers").val();
+  $.ajax({ // create an AJAX call...
+      data:{ 'time' : selectTime, 'date' : selectDate} , // get the form data
+      type: "post", // GET or POST
+      url: "<?= base_url()?>web/check_time", // the file to call
+      success: function (response) { // on success..
+        var obj = JSON.parse(response);
+        if(obj.error == ""){
+          $(".time_error").html("");
+        }else{
+          $(".time_error").html("<span class='text-danger'>"+obj.error+"</span>");
+          
+        }
+      }
+  }); 
+}
+  function chk_pallet(){
+     var sum = 0;
+     var selectDate = $("#datepickers").val();
+     var ship_to = $("#ship_too").val();
+     if(ship_to == "Select Location"){
+      alert("Select ship to and date")
+     }else{
+        $(".totalpallet").each(function(){
+          sum += +$(this).val();
+          $("#total_pallets").val(sum);
+        });
+        $.ajax({ // create an AJAX call...
+            data:{ 'date' : selectDate, 'pallet_count' : sum, 'ship_to':ship_to } , // get the form data
+            type: "post", // GET or POST
+            url: "<?= base_url()?>web/check_pallet", // the file to call
+            success: function (response) { // on success..
+              var obj = JSON.parse(response);
+             // alert(obj.error);
+              $("#total_pallet").val('0');
+              if(obj.error != ""){
+                $(".pallet_error").html("<span class='text-danger'>"+obj.error+"</span>");
+              }else{
+                $(".pallet_error").html("<span class='text-success'> Avaliable Pallet "+obj.remain_qty+"</span>");
+                $("#total_pallet").val(obj.remain_qty);
+              }
+            }
+        });   
+    }
+  }
+  var wasSubmitted = false;    
+  function checkBeforeSubmit(){
+    if(!wasSubmitted) {
+      wasSubmitted = true;
+      return wasSubmitted;
+    }
+    return false;
+  }    
+/*Add Dyanmic row in batch*/
+  function add_newrow($item_no) {
+    //alert($item_no);
+    var table = document.getElementById("batch_table-"+$item_no);
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    cell1.innerHTML = '<button class="btn btn-sm btn-danger" type="button" name="action2" style="line-height: 1;" onclick="delete_newroww(this,'+$item_no+')"><span aria-hidden="true" style="font-size: 20px;">&times;</span></button>';
+    cell2.innerHTML = '<input class="form-control px-1 popup_qty_'+$item_no+'" type="number" name="new_qty[]" required data-parsley-type="integer" data-parsley-error-message="Only Numeric Value">';
+    cell3.innerHTML = '<input class="form-control px-1" type="text" name="batch_no[]" required data-parsley-type="alphanum" data-parsley-error-message="Only AlphaNumeric Value">';
+    cell4.innerHTML = '<input class="form-control px-1 datepicker" type="date" onkeydown="return false" id="startDate-0" name="manu_date_qty[]">';
+    cell5.innerHTML = '<input class="form-control px-1 datepicker" type="date" onkeydown="return false" id="endDate-0" name="expiry_date_qty[]">';
+  }
+/*End Add Dyanmic row in batch*/
+/* submit batch*/
+  function submitBtn(item_id) {
+   if ($('#temp_frm_'+item_id).parsley().validate()){
+    var sum = 0;var 
+    opqty = $('#bat_row_'+item_id).val();
+    $(".popup_qty_"+item_id).each(function(){
+       sum += +$(this).val();
+    });
+
+    if(sum<=opqty){
+      $.ajax({ // create an AJAX call...
+        data: $('#temp_frm_'+item_id).serialize(), // get the form data
+        type: "post", // GET or POST
+        url: "<?= base_url()?>web/add_batch", // the file to call
+        success: function (response) { // on success..
+         $('#batch_res').html();
+         $('#batch_res').html("<div class='alert alert-success' role='alert'>Batch Set Successfully<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden = 'true' >&times; </span></button></div>").fadeIn();
+         $(".request_qty_"+item_id).val(sum);
+         $("#batch_modal-"+item_id).modal('hide');
+         //$('#bat').attr('disabled',false);
+          $('#batch_res').delay(2000).fadeOut('slow');
+        }
+    });
+    }else{
+        $('.batch_res').html();
+        $('.batch_res').html("<div class='alert alert-warning' role='alert'>Allow Total Batch-QTY ="+opqty+"<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden = 'true' >&times; </span></button></div>").fadeIn();
+        $('.batch_res').delay(4000).fadeOut('slow');
+    }
+  }
+   else{
+     console.log ('invalid');
+    }
+  };
+/*End  submit batch*/
+
+  function delete_newroww(r,item_id) {
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("batch_table-"+item_id).deleteRow(i);
+    document.getElementById("batch_table-"+$item_no).deleteRow(i);
+  }
+
+  $('#chks').on('change', function() { 
+    if (this.checked) {
+      $( ".chk" ).prop( "checked", true );
+      $( ".chkss" ).prop( "disabled", false );
+    }else{
+      $( ".chk" ).prop( "checked", false );
+      $( ".chkss" ).prop( "disabled", true );
+      $(".chkss").val("");
+    }
+  });
+  $('.chk').on('change', function() { 
+
+    var chkid="";
+    chkid=$(this).attr("id");
+   
+    $("."+chkid+"in").val("");
+    if (this.checked) {      
+      $("."+chkid+"in").prop( "disabled", false);
+    }else{
+      $("."+chkid+"in").prop( "disabled", true);
+    }
+  });
+  
+  function delete_newrow(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("example").deleteRow(i);
+    var les = $('#less').val();
+    les=les-1;
+    // alert(les);
+    $('#less').val(les);
+  }
+  $(document).on('focus', '.datepicker',function(){
+    var ids=$(this).attr('id');
+    var iid = ids.split("-");
+
+     if("startDate"==iid[0]){
+      $(this).datepicker({
+        uiLibrary: 'bootstrap4',
+        iconsLibrary: 'fontawesome',
+        format: 'yyyy-mm-dd',
+        todayHighlight:true,
+        autoclose:true,          
+
+      });
+    }else if("endDate"==iid[0]){
+
+      $(this).datepicker({
+        uiLibrary: 'bootstrap4',
+        iconsLibrary: 'fontawesome',
+        format: 'yyyy-mm-dd',
+        todayHighlight:true,
+        autoclose:true,
+        minDate: function () {
+          return $('#startDate-'+iid[1]).val();
+        }
+      });
+    }
+  });
+
+
+
+
+</script>
+<script>
+$("#datepicker2").datepicker({
+        format:'dd/mm/yyyy',
+        value: '27/07/2020',
+        disableDates: [new Date(2020, 7, 4), '28/07/2020', '29/07/2020', '30/07/2020', '31/07/2020', '01/08/2020', '02/08/2020', '03/08/2020', '04/08/2020']
+     });
+
+
+
+</script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+</body>
+</html>
