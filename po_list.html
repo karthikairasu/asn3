@@ -56,72 +56,85 @@
       
       </div>
       <div class="col-md-8 col-sm-8 col-12 text-center">         
-        <h4 class="text-center"><b>Request</b></h4>
+        <h4 class="text-center"><b>PO List</b></h4>
       </div>
       <div class="col-md-2 col-sm-2 col-12 pb-2 text-center">
         
       </div>
     </div>
-    <div class="mb-4" style="border: 2px solid #dee2e6">
-    <form class="" action="">
-        <div class="row p-2 mx-0">
-          <div class="col-md-3 col-sm-6 col-12">
-           <div class="form-group">
-              <label class=""><b>Moh Po Number :</b></label>
-              <input
-              type="text"
-              class="form-control br_cr"
-              id="mohpo_no" placeholder=""
-              />
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="form-group">
-              <label class=""><b>Date :</b></label>
-              <input
-              type="text"
-              class="form-control br_cr"
-              id="date" placeholder=""
-              />
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-12">
-           <div class="form-group">
-              <label class=""><b>Nupco Po Number :</b></label>
-              <input
-              type="text"
-              class="form-control br_cr"
-              id="nuppo_no" placeholder=""
-              />
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="form-group">
-              <label class=""><b>Date :</b></label>
-              <input
-              type="text"
-              class="form-control br_cr"
-              id="date" placeholder=""
-              />
-            </div>
-          </div>
-          <h5 class="w-100"><b>Dear NUPCO TEAM,</b></h5>
-          <p><b>This is request to you that we are not finding our PO in the Po Lisy, Could you please kindly check and provide the Po for the above reference.</b></p>
-           <div class="col-md-6 col-sm-6 col-12 px-0">
-              <p><b>Thanks</b></p>
-              <p><b>Regards</b></p>
-              <p><b>Vendor Name</b></p>
-            </div>
-            <div class="col-md-6 col-sm-6 col-12 px-0">
-              <p class="mb-0"><b>Additional Comments</b></p>
-              <textarea type="text" class="form-control"></textarea>
-            </div>
-        </div>
-      </form> 
-      </div> <!--========= border close ========-->
-      
+      <div class="col-12 table_fixed_height text-center px-0">
+        <table id="example" class="table table-bordered mx-auto mb-0">
+          <thead class="bg-info text-white">
+            <tr>
+              <th>All</th>
+              <th>PO No</th>
+              <th>Total Value</th>
+              <th>PO Date</th>
+              <th>Plant</th>
+              <th>PO Qty</th>
+              <th>Delivered Qty</th>
+              <th>Remaining Qty</th>
+            </tr>
+          </thead>
+
+            <tbody style="cursor: pointer;">
+              <tr >
+                <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015950'" -->
+                <td><input type="checkbox" name="po_no[]" value="4500015950"></td>
+                <td >4500015950 </td>
+                <td>233,480.73</td>
+                
+                <td>2020-03-01</td>
+                <!-- <td>2020-07-11</td> -->
+                <td>ESC1</td>
+                <td class="text-right">372,477.00</td>
+                <td class="text-right">255,150.00</td>
+               <td class="text-right">117,327.00</td>
+              </tr>
+              <tr >
+                <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015967'" -->
+                <td><input type="checkbox" name="po_no[]" value="4500015967"></td>
+                <td >4500015967 </td>
+                <td>6,603,879.73</td>
+                
+                <td>2020-03-12</td>
+                <!-- <td>2020-08-30</td> -->
+                <td>ESC1</td>
+                <td class="text-right">1,690,475.00</td>
+                <td class="text-right">255,264.00</td>
+               <td class="text-right">1,435,211.00</td>
+              </tr>
+              <tr >
+                <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015984'" -->
+                <td><input type="checkbox" name="po_no[]" value="4500015984"></td>
+                <td >4500015984 </td>
+                <td>22,750,942.90</td>
+                
+                <td>2020-03-25</td>
+                <!-- <td>2020-10-30</td> -->
+                <td>ESC1</td>
+                <td class="text-right">3,584,878.00</td>
+                <td class="text-right">37,812.00</td>
+               <td class="text-right">3,547,066.00</td>
+              </tr>
+              <tr >
+                <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500016822'" -->
+                <td><input type="checkbox" name="po_no[]" value="4500016822"></td>
+                <td >4500016822 </td>
+                <td>142,670.00</td>
+                
+                <td>2020-07-13</td>
+                <!-- <td>2020-07-13</td> -->
+                <td>ESC4</td>
+                <td class="text-right">3,400.00</td>
+                <td class="text-right">0.00</td>
+               <td class="text-right">3,400.00</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
       <center class="my-3">
-        <button class="btn btn-primary" type="submit" value="submit"> Send Request </button>
+        <a class="btn btn-primary" href="create_new_gr.html" type="submit" value="submit"> Create ASN </a>
       </center> 
   </div>
   </main> 
