@@ -1,5 +1,5 @@
 body{
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Montserrat",sans-serif;
 }
 a{
   text-decoration:none;
@@ -151,3 +151,51 @@ nav{
     flex: 1 0 20px;
     border-radius: 0px 0px 5px 5px;
   }
+  /*====================================
+  #header
+  =====================================*/
+.bg_darkblue{
+  background-color: #1c2346;
+}
+/*====================================
+  #login card
+  =====================================*/
+.login_card{
+  box-shadow: 5px 4px 22px -1px rgba(125,125,125,0.5);
+  border-radius: 4px;
+  font-size: 14px;
+  color: #1c2346;
+}
+.login_card label b{
+  font-weight: bold;
+}
+.login_card label{
+  margin-bottom: 0px; 
+}
+.text_red{
+  color: #f00;
+}
+.text_sky{
+  color: #2096D7;
+}
+.login_card .form-group input{
+  border: solid 1px #1c2346 !important;
+}
+.btn_orange{
+    border: 1px solid #1c2346;
+    padding: .375rem 2.75rem;
+    font-size: 0.8rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    background: #fff;
+    color: #1c2346;
+}
+.btn_orange:hover{
+    border: 1px solid transparent;
+    padding: .375rem 2.75rem;
+    font-size: 0.8rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    background: #e33118;
+    color: white;
+}
