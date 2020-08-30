@@ -220,12 +220,11 @@
                         <td class="py-1 px-1">
                           <input
                             class="form-control"
-                            type="date"
-                            id="datepicker"
+                            id="datepicker2"
                             style="width: 50%;"
                             name="delivery_date"
                             onchange="chk_pallet()"
-                            value="2020-07-28"
+                            value=""
                             required=""
                           />
                           <span class="pallet_error"></span>
@@ -1282,31 +1281,17 @@
         }
       });
     </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <script>
       $("#datepicker2").datepicker({
         format: "dd/mm/yyyy",
-        value: "27/07/2020",
-        disableDates: [
-          new Date(2020, 7, 4),
-          "28/07/2020",
-          "29/07/2020",
-          "30/07/2020",
-          "31/07/2020",
-          "01/08/2020",
-          "02/08/2020",
-          "03/08/2020",
-          "04/08/2020",
-        ],
+        uiLibrary: 'bootstrap4', 
+        iconsLibrary: 'materialicons',
+      value: '30/08/2020',
+       disableDates: [new Date(2020, 8, 12), '30/08/2020', '31/08/2020', '01/09/2020', '02/09/2020', '03/09/2020', '04/09/2020', '05/09/2020', '06/09/2020', '07/09/2020', '08/09/2020', '09/09/2020', '10/09/2020', '11/09/2020', '12/09/2020'],
       });
     </script>
-    <script
-      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
-      type="text/javascript"
-    ></script>
-    <link
-      href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
   </body>
 </html>
