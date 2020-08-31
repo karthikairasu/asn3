@@ -1,0 +1,527 @@
+
+
+  <style type="text/css">
+    /*Hide Input arrows*/
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        /* Firefox */
+        input[type="number"] {
+          -moz-appearance: textfield;
+        }
+        .main_div {
+          width: 100%;
+        }
+        #add_newrow tbody td {
+          padding-left: 0.25rem;
+          padding-right: 0.25rem;
+        }
+        .table_padding thead tr th {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          white-space: nowrap;
+        }
+        .table_padding tbody tr td {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+        .table_fixed_height {
+          max-height: 80vh;;
+          overflow-y: auto;
+          width: 100%;
+          border-bottom: 1px solid #dcdcdc;
+        }
+        .read_only {
+          user-select: none;
+          cursor: not-allowed;
+          pointer-events: none;
+        }
+        .start_date .gj-datepicker .input-group-append button {
+          height: calc(1.5em + 0.55rem + 1px);
+        }
+        .select_box {
+          max-width: 100%;
+          background-color: #cac7c7;
+          border: 1px solid #565656;
+        }
+        .selected {
+          text-align: right;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          color: white;
+        }
+        .fill {
+          width: 100%;
+          background-color: #2196f3;
+          text-align: center;
+        }
+
+        .time_tbl td,
+        .time_tbl th {
+          padding: 8px 3px;
+          vertical-align: top;
+          border-top: 1px solid #dee2e6;
+        }
+        .time_tbl input[type="radio"] {
+          width: 20px;
+          height: 20px;
+          margin-right: 5px;
+          vertical-align: bottom;
+        }
+
+        .time_tbl input[type="radio"]:after {
+          content: "";
+          border-bottom: 10px solid red;
+          border-top: 10px solid red;
+          display: block;
+          opacity: 1;
+        }
+
+        .time_tbl input[type="radio"]:checked:after {
+          border-bottom: 10px solid blue;
+          border-top: 10px solid blue;
+        }
+        /*#set_timein:focus{
+      box-shadow: none;
+      border-bottom: 1px solid red;
+    }*/
+        .parsley-success {
+          color: #468847;
+          background-color: #dff0d8;
+          border: 1px solid #d6e9c6;
+        }
+        .parsley-required {
+          display: none;
+        }
+        .parsley-errors-list {
+          color: red;
+          list-style-type: none;
+          font-size: 14px;
+          margin-left: -37px;
+        }
+        /*.parsley-error {
+    color: #B94A48;
+    background-color: #F2DEDE;
+    border: 1px solid #EED3D7;
+  }*/
+        .table_tab .nav-item.show .nav-link,
+        .table_tab .nav-link.active {
+          color: #fff;
+          background-color: #17a2b8;
+          border: 1px solid transparent;
+          box-shadow: 0 0 4px 0px #000000d6;
+        }
+
+        .table_tab .nav-link {
+          color: #fff;
+          background-color: #e23719;
+          border: 1px solid transparent;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          box-shadow: 0 0 1px #e43023;
+        }
+
+  </style>
+
+  <main>
+    <div class="container-fluid pt-4 mt-5 main_div">
+      <form action="" method="POST" id="form" enctype="multipart/form-data" onsubmit="return checkBeforeSubmit()" style="width: 100%;">
+        <div class="row">
+          <h3 class="mb-2 mx-auto">
+            <b>Select Item</b>
+          </h3>
+        </div>
+        <div class="row justify-content-center mx-0">
+          <div class="col-12 text-center px-0 table_fixed_height">
+            <table
+              class="table table-bordered mx-auto po_table table_padding mb-0 example" 
+              id=""
+            >
+              <thead class="bg-info text-white">
+                <tr>
+                 <th class="px-1">ALL&nbsp;<input type="checkbox" id="chks"></th>
+                  <th class="px-1">Nupco PO #</th>
+                  <th class="px-1">Nupco PO Item #</th>
+                  <th class="px-1">Item Description</th>
+                  <th class="px-1">Nupco Gen Code</th>
+                  <th class="px-1">MOH PO #</th>
+                  <th class="px-1">Item Description</th>
+                  <th class="px-1">MOH Gen Code</th>
+                  <th class="px-1">PO Qty</th>
+                  <th class="px-1">UOM</th>
+                  
+                  <th class="px-1">Unit Price</th>
+                  <th class="px-1">PO Delivery Date</th>
+                  <th class="px-1">Currency</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" class="chk" name="" id=""  value=""></td>
+                  <td>4512378912</td>
+                  <td>10</td>
+                  <td>Applicator Tip well</td>
+                  <td>1110001234567</td>
+                  <td>391234567841</td>
+                  <td>Others</td>
+                  <td>13123456789</td>
+                  <td>5.00</td>
+                  <td>Box</td>
+                  <td>2134.00</td>
+                  <td>2020-04-23</td>
+                  <td>SAR</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="chk" name="" id=""  value=""></td>
+                  <td>4512378912</td>
+                  <td>10</td>
+                  <td>Applicator Tip well</td>
+                  <td>1110001234567</td>
+                  <td>391234567841</td>
+                  <td>Others</td>
+                  <td>13123456789</td>
+                  <td>5.00</td>
+                  <td>Box</td>
+                  <td>2134.00</td>
+                  <td>2020-04-23</td>
+                  <td>SAR</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="chk" name="" id=""  value=""></td>
+                  <td>4512378912</td>
+                  <td>10</td>
+                  <td>Applicator Tip well</td>
+                  <td>1110001234567</td>
+                  <td>391234567841</td>
+                  <td>Others</td>
+                  <td>13123456789</td>
+                  <td>5.00</td>
+                  <td>Box</td>
+                  <td>2134.00</td>
+                  <td>2020-04-23</td>
+                  <td>SAR</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="chk" name="" id=""  value=""></td>
+                  <td>4512378912</td>
+                  <td>10</td>
+                  <td>Applicator Tip well</td>
+                  <td>1110001234567</td>
+                  <td>391234567841</td>
+                  <td>Others</td>
+                  <td>13123456789</td>
+                  <td>5.00</td>
+                  <td>Box</td>
+                  <td>2134.00</td>
+                  <td>2020-04-23</td>
+                  <td>SAR</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="chk" name="" id=""  value=""></td>
+                  <td>4512378912</td>
+                  <td>10</td>
+                  <td>Applicator Tip well</td>
+                  <td>1110001234567</td>
+                  <td>391234567841</td>
+                  <td>Others</td>
+                  <td>13123456789</td>
+                  <td>5.00</td>
+                  <td>Box</td>
+                  <td>2134.00</td>
+                  <td>2020-04-23</td>
+                  <td>SAR</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="chk" name="" id=""  value=""></td>
+                  <td>4512378912</td>
+                  <td>10</td>
+                  <td>Applicator Tip well</td>
+                  <td>1110001234567</td>
+                  <td>391234567841</td>
+                  <td>Others</td>
+                  <td>13123456789</td>
+                  <td>5.00</td>
+                  <td>Box</td>
+                  <td>2134.00</td>
+                  <td>2020-04-23</td>
+                  <td>SAR</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="chk" name="" id=""  value=""></td>
+                  <td>4512378912</td>
+                  <td>10</td>
+                  <td>Applicator Tip well</td>
+                  <td>1110001234567</td>
+                  <td>391234567841</td>
+                  <td>Others</td>
+                  <td>13123456789</td>
+                  <td>5.00</td>
+                  <td>Box</td>
+                  <td>2134.00</td>
+                  <td>2020-04-23</td>
+                  <td>SAR</td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+       <!-----------close------------------------->
+      </div>
+       <!-----------close------------------------->
+      <div class="form-group text-center mt-3 mb-0">
+        <a href="" class="btn btn-info" >Back</a>
+        <button type="submit" name="submit" value="submit" class="btn btn-info">Next</button>
+      </div>
+
+      
+    </form>
+
+  </div>
+  </main>
+
+  <?php 
+  for ($k=0; $k <count($po_item) ; $k++) { 
+  foreach ($po_item[$k] as $key => $value) {  ?>
+  <!-- The Modal -->
+  <div class="modal" id="batch_modal-<?=$value->id?>">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header py-1">
+          <h4 class="modal-title mx-auto"><b>Batch</b></h4>
+          <button type="button" class="close ml-0 pl-0 pb-0" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <form id="temp_frm_<?=$value->id?>" data-parsley-validate="true"  name="temp_frm" action="<?= base_url()?>web/add_batch" method="post" >
+          <div class="modal-body pt-1"><span class="batch_res"></span>
+            <button class="float-right btn btn-info mb-1" type="button" onclick="add_newrow(<?=$value->id?>)">Add New</button>
+            <table class="table table-bordered" id="batch_table-<?=$value->id?>">
+              <thead class="bg-info text-white text-nowrap text-center">
+                <tr>
+                  <th class="px-1" width="5%">Action</th>
+                  <th>Batch Qty</th>
+                  <th>Batch Number</th>
+                  <th>Manufacture Date</th>
+                  <th>Expiry Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <button class="btn btn-sm btn-danger" type="button" name="action2" style="line-height: 1;"disabled onclick="delete_newroww(this)">
+                      <span aria-hidden="true" style="font-size: 20px;">&times;</span>
+                    </button>
+                  </td>
+                  <td>
+                    <input class="form-control px-1 popup_qty_<?=$value->id?>" type="number" name="new_qty[]" required data-parsley-type="integer" data-parsley-error-message="Only Numeric Value">
+                  </td>
+                  <td>
+                    <input class="form-control px-1" type="text" data-parsley-type="alphanum" name="batch_no[]" required data-parsley-error-message="Only AlphaNumeric Value">
+                  </td>
+                  <td>
+                    <input class="form-control px-1 datepicker" type="date" onkeydown="return false" id="startDate-0" name="manu_date_qty[]">
+                  </td>
+                  <td>
+                    <input class="form-control px-1 datepicker" type="date" onkeydown="return false" id="endDate-0" name="expiry_date_qty[]">
+                  </td>
+                </tr>
+                <input type="hidden" id="bat_row_<?=$value->id?>" name="bat_row_<?=$value->id?>" value="<?=$value->open_qty?>" >          
+              </tbody>
+            </table>
+          </div>
+          <!-- Modal footer -->
+          <input type="hidden" name="vendor_no" id="<?=$value->vendor_no?>">
+          <input type="hidden" name="po_no" value="<?=$value->nupco_po_no?>">
+          <input type="hidden" name="po_item_no" value="<?=$value->nupco_po_item?>">
+          <div class="modal-footer justify-content-center">
+            <button type="button" onclick="submitBtn(<?=$value->id?>)"  class="btn btn-success">Submit</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </form> 
+      </div>
+    </div>
+  </div>
+  <?php } }?>
+
+
+  <script>
+  function time_chk(){
+    var selectTime = $("#selectTime").val();
+    var selectDate = $("#datepickers").val();
+    $.ajax({ // create an AJAX call...
+        data:{ 'time' : selectTime, 'date' : selectDate} , // get the form data
+        type: "post", // GET or POST
+        url: "<?= base_url()?>web/check_time", // the file to call
+        success: function (response) { // on success..
+          var obj = JSON.parse(response);
+          if(obj.error == ""){
+            $(".time_error").html("");
+          }else{
+            $(".time_error").html("<span class='text-danger'>"+obj.error+"</span>");
+            
+          }
+        }
+    }); 
+  }
+    function chk_pallet(){
+       var sum = 0;
+       var selectDate = $("#datepickers").val();
+       var ship_to = $("#ship_too").val();
+       if(ship_to == ""){
+        alert("Select ship to and date")
+       }else{
+          $(".totalpallet").each(function(){
+            sum += +$(this).val();
+            $("#total_pallets").val(sum);
+          });
+          $.ajax({ // create an AJAX call...
+              data:{ 'date' : selectDate, 'pallet_count' : sum, 'ship_to':ship_to } , // get the form data
+              type: "post", // GET or POST
+              url: "<?= base_url()?>web/check_pallet", // the file to call
+              success: function (response) { // on success..
+                var obj = JSON.parse(response);
+               // alert(obj.error);
+                $("#total_pallet").val('0');
+                if(obj.error != ""){
+                  $(".pallet_error").html("<span class='text-danger'>"+obj.error+"</span>");
+                }else{
+                  $(".pallet_error").html("<span class='text-success'> Avaliable Pallet "+obj.remain_qty+"</span>");
+                  $("#total_pallet").val(obj.remain_qty);
+                }
+              }
+          });   
+      }
+    }
+    var wasSubmitted = false;    
+    function checkBeforeSubmit(){
+      if(!wasSubmitted) {
+        wasSubmitted = true;
+        return wasSubmitted;
+      }
+      return false;
+    }    
+  /*Add Dyanmic row in batch*/
+    function add_newrow($item_no) {
+      //alert($item_no);
+      var table = document.getElementById("batch_table-"+$item_no);
+      var row = table.insertRow();
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      var cell5 = row.insertCell(4);
+      cell1.innerHTML = '<button class="btn btn-sm btn-danger" type="button" name="action2" style="line-height: 1;" onclick="delete_newroww(this,'+$item_no+')"><span aria-hidden="true" style="font-size: 20px;">&times;</span></button>';
+      cell2.innerHTML = '<input class="form-control px-1 popup_qty_'+$item_no+'" type="number" name="new_qty[]" required data-parsley-type="integer" data-parsley-error-message="Only Numeric Value">';
+      cell3.innerHTML = '<input class="form-control px-1" type="text" name="batch_no[]" required data-parsley-type="alphanum" data-parsley-error-message="Only AlphaNumeric Value">';
+      cell4.innerHTML = '<input class="form-control px-1 datepicker" type="date" onkeydown="return false" id="startDate-0" name="manu_date_qty[]">';
+      cell5.innerHTML = '<input class="form-control px-1 datepicker" type="date" onkeydown="return false" id="endDate-0" name="expiry_date_qty[]">';
+    }
+  /*End Add Dyanmic row in batch*/
+  /* submit batch*/
+    function submitBtn(item_id) {
+     if ($('#temp_frm_'+item_id).parsley().validate()){
+      var sum = 0;var 
+      opqty = $('#bat_row_'+item_id).val();
+      $(".popup_qty_"+item_id).each(function(){
+         sum += +$(this).val();
+      });
+
+      if(sum<=opqty){
+        $.ajax({ // create an AJAX call...
+          data: $('#temp_frm_'+item_id).serialize(), // get the form data
+          type: "post", // GET or POST
+          url: "<?= base_url()?>web/add_batch", // the file to call
+          success: function (response) { // on success..
+           $('#batch_res').html();
+           $('#batch_res').html("<div class='alert alert-success' role='alert'>Batch Set Successfully<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden = 'true' >&times; </span></button></div>").fadeIn();
+           $(".request_qty_"+item_id).val(sum);
+           $("#batch_modal-"+item_id).modal('hide');
+           //$('#bat').attr('disabled',false);
+            $('#batch_res').delay(2000).fadeOut('slow');
+          }
+      });
+      }else{
+          $('.batch_res').html();
+          $('.batch_res').html("<div class='alert alert-warning' role='alert'>Allow Total Batch-QTY ="+opqty+"<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden = 'true' >&times; </span></button></div>").fadeIn();
+          $('.batch_res').delay(4000).fadeOut('slow');
+      }
+    }
+     else{
+       console.log ('invalid');
+      }
+    };
+  /*End  submit batch*/
+
+    function delete_newroww(r,item_id) {
+      var i = r.parentNode.parentNode.rowIndex;
+      document.getElementById("batch_table-"+item_id).deleteRow(i);
+      document.getElementById("batch_table-"+$item_no).deleteRow(i);
+    }
+
+    $('#chks').on('change', function() { 
+      if (this.checked) {
+        $( ".chk" ).prop( "checked", true );
+        $( ".chkss" ).prop( "disabled", false );
+      }else{
+        $( ".chk" ).prop( "checked", false );
+        $( ".chkss" ).prop( "disabled", true );
+        $(".chkss").val("");
+      }
+    });
+    $('.chk').on('change', function() { 
+
+      var chkid="";
+      chkid=$(this).attr("id");
+     
+      $("."+chkid+"in").val("");
+      if (this.checked) {      
+        $("."+chkid+"in").prop( "disabled", false);
+      }else{
+        $("."+chkid+"in").prop( "disabled", true);
+      }
+    });
+    
+    function delete_newrow(r) {
+      var i = r.parentNode.parentNode.rowIndex;
+      document.getElementById("example").deleteRow(i);
+      var les = $('#less').val();
+      les=les-1;
+      // alert(les);
+      $('#less').val(les);
+    }
+    $(document).on('focus', '.datepicker',function(){
+      var ids=$(this).attr('id');
+      var iid = ids.split("-");
+
+       if("startDate"==iid[0]){
+        $(this).datepicker({
+          uiLibrary: 'bootstrap4',
+          iconsLibrary: 'fontawesome',
+          format: 'yyyy-mm-dd',
+          todayHighlight:true,
+          autoclose:true,          
+
+        });
+      }else if("endDate"==iid[0]){
+
+        $(this).datepicker({
+          uiLibrary: 'bootstrap4',
+          iconsLibrary: 'fontawesome',
+          format: 'yyyy-mm-dd',
+          todayHighlight:true,
+          autoclose:true,
+          minDate: function () {
+            return $('#startDate-'+iid[1]).val();
+          }
+        });
+      }
+    });
+
+    $("#datepicker2").datepicker({
+      format:'yyyy-mm-dd',
+      // value: '27/07/2020',
+      // disableDates: [new Date(2020, 7, 4), '28/07/2020', '29/07/2020', '30/07/2020', '31/07/2020', '01/08/2020', '02/08/2020', '03/08/2020', '04/08/2020']
+    });
+  </script>
