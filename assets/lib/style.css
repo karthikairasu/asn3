@@ -199,3 +199,86 @@ nav{
     background: #e33118;
     color: white;
 }
+/*===================================*/
+  .form-control-sm{
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  height: calc(1.5em + .65rem + 2px);
+}
+.form-control-sm:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+.dataTables_wrapper .dataTables_length label{
+  margin: 6px 0px 3px 0px;
+}
+.dataTables_wrapper .dataTables_filter label{
+  margin: 3px 0px 3px 0px;
+}
+.dataTables_wrapper .dataTables_length{
+    background-color: #ffffff;
+    /* color: #fff; */
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    padding: 5px 5px!important;
+    outline: 2px solid rgb(255 255 255);
+    /* font-size: 13px; */
+    box-shadow: 0px -3px 4px 4px #ffffff;
+    font-weight: 600;
+    width: 50%!important;
+    text-align: left!important;
+    float: left!important;
+}
+.dataTables_wrapper .dataTables_filter{
+    background-color: #ffffff;
+    /* color: #fff; */
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    padding: 5px 5px!important;
+    outline: 2px solid rgb(255 255 255);
+    /* font-size: 13px; */
+    box-shadow: 0px -3px 4px 4px #ffffff;
+    font-weight: 600;
+    width: 50%!important;
+    float: right!important;
+    text-align: right!important;
+}
+.dataTables_wrapper .dataTables_filter label input{
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+.dataTables_wrapper .dataTables_filter label input:focus{
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+@media (max-width:1367.98px ){
+ .table_fixed_height{
+    max-height: 40vh!important;
+
+  }
+}
+@media (min-width:1366px ) and (max-width:1599.98px ){
+  .table_fixed_height{
+    max-height: 50vh!important;
+  }
+}
+@media (min-width:1600px ) and (max-width:1919.98px ){
+  .table_fixed_height{
+    max-height: 58vh!important;
+  }
+}
+@media (min-width:1920px ){
+  .table_fixed_height{
+    max-height: 65vh!important;
+  }
+}
