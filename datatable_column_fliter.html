@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 shrink-to-fit=no, user-scalable=0">
+
+  <title>ASN</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <meta name="theme-color" content="#0B5E97">
+  <link rel="icon" type="image/png" href="assets/images/logo.png" sizes="194x194">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Play|Titillium+Web|Roboto+Condensed|Changa|Lobster|Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+  <!-- Style files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!--- Datatables --->
+  <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
+  <!-- dev datatable link -->
+  <link rel='stylesheet' href='https://cdn3.devexpress.com/jslib/20.1.7/css/dx.common.css'>
+  <link rel='stylesheet' href='https://cdn3.devexpress.com/jslib/20.1.7/css/dx.light.css'>
+  <style type="text/css">
+    #gridContainer {
+    height: 440px;
+}
+
+.options {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgba(191, 191, 191, 0.15);
+}
+
+.caption {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.option {
+    margin-top: 10px;
+}
+
+.option > span {
+    margin-right: 10px;
+}
+
+.option > .dx-selectbox {
+    display: inline-block;
+    vertical-align: middle;
+}
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <header>
+      <nav class="navbar navbar-expand-sm justify-content-center py-0 shadow fixed-top bg_darkblue" style="border-bottom: 1px solid #1c2346;min-height: 65px;font-family: 'Montserrat',sans-serif;background-color: #1c2346;">
+    <div class="col-2 text-center">
+              <a class="navbar-brand float-left py-1 mr-0" href="#" onclick="goBack()">
+        <i class="fas fa-angle-left pl-2" style="font-size: 30px;line-height: 1.7;" aria-hidden="true"></i>
+      </a>
+        <a href="">
+        <img src="assets/images/logo3.png" height="60px">
+      </a>
+    </div>
+    <div class="col-8 text-center text-white">
+       <h4 class="mb-0">400022 - ARABIAN HEALTH CARE SUPPLY COMPANY</h4>
+    </div>
+    <div class="col-2 text-right text-white">
+      <a href="">
+        <i class="fas fa-power-off" aria-hidden="true"></i> Logout
+      </a>
+    </div>
+  </nav>
+</header>
+  <main>
+  <div class="container-fluid mt-5 pt-4">
+
+  
+    <div class="dx-viewport demo-container">        
+        <div id="gridContainer"></div>
+        <!-- <div class="options">
+            <div class="caption">Options</div>
+            <div class="option">
+                <span>Apply Filter</span>
+                <div id="useFilterApplyButton"></div>
+            </div>
+            <div class="option">
+                <div id="filterRow"></div>
+            </div>
+            <div class="option">
+                <div id="headerFilter"></div>
+            </div>
+        </div> -->
+    </div>
+
+  </div>
+  </main>
+</div>
+
+<!-- script files -->
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <!--- Datatables --->
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
+  <!-- dev datatable link -->
+  <script src='https://cdn3.devexpress.com/jslib/20.1.7/js/dx.all.js'></script>
+
+  <script type="text/javascript">
+    $(function(){
+    var dataGrid = $("#gridContainer").dxDataGrid({
+        dataSource: orders,
+        columnsAutoWidth: true,
+        showBorders: true,
+        filterRow: {
+            visible: true,
+            applyFilter: "auto"
+        },
+        searchPanel: {
+            visible: true,
+            width: 240,
+            placeholder: "Search..."
+        },
+        headerFilter: {
+            visible: true
+        },
+        columns: [
+        // {
+        //     dataField: "OrderNumber",
+        //     caption: "Invoice Number",
+        //     width: 140,
+        //     headerFilter: {
+        //         groupInterval: 200
+        //     }
+        // }, 
+        {
+            dataField: "ALL",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        }, 
+        {
+            dataField: "NUPCO PO #",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        },
+        {
+            dataField: "NUPCO PO Item #",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        },
+        {
+            dataField: "Item Description",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        },
+        {
+            dataField: "NUPCO Gen Code",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        },
+        {
+            dataField: "MOH PO",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        },
+        {
+            dataField: "Item Description",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        },
+        {
+            dataField: "MOH Gen Code",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        },
+        {
+            dataField: "PO Qty",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        },
+        {
+            dataField: "PO Delivery Date",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        },
+        {
+            dataField: "Request Qty",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        },
+        {
+            dataField: "Pallet count",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        },
+        {
+            dataField: "Batch",
+            width: 140,
+            headerFilter: {
+                groupInterval: 10000
+            }
+        },{
+            dataField: "OrderDate",
+            alignment: "right",
+            dataType: "date",
+            width: 120,
+            calculateFilterExpression: function(value, selectedFilterOperations, target) {
+                if(target === "headerFilter" && value === "weekends") {
+                    return [[getOrderDay, "=", 0], "or", [getOrderDay, "=", 6]];
+                }
+                return this.defaultCalculateFilterExpression.apply(this, arguments);
+            },
+            headerFilter: {
+                dataSource: function(data) {
+                    data.dataSource.postProcess = function(results) {
+                        results.push({
+                            text: "Weekends",
+                            value: "weekends"
+                        });                        
+                        return results;
+                    };
+                }
+            }
+        }, {
+            dataField: "DeliveryDate",
+            alignment: "right",
+            dataType: "datetime",
+            width: 180,
+            format: "M/d/yyyy, HH:mm"
+        }, {
+            dataField: "SaleAmount",
+            alignment: "right",
+            format: "currency",
+            editorOptions: {
+                format: "currency",
+                showClearButton: true
+            },
+            headerFilter: {
+                dataSource: [ {
+                    text: "Less than $3000",
+                    value: ["SaleAmount", "<", 3000]
+                }, {
+                    
+                    text: "$3000 - $5000",
+                    value: [["SaleAmount", ">=", 3000], ["SaleAmount", "<", 5000]]
+                }, {
+                    
+                    text: "$5000 - $10000",
+                    value: [["SaleAmount", ">=", 5000], ["SaleAmount", "<", 10000]]
+                }, {
+                    
+                    text: "$10000 - $20000",
+                    value: [["SaleAmount", ">=", 10000], ["SaleAmount", "<", 20000]]
+                }, {                    
+                    text: "Greater than $20000",
+                    value: ["SaleAmount", ">=", 20000]
+                }]
+            }
+        }, "Employee", {
+            caption: "City",
+            dataField: "CustomerStoreCity",
+            headerFilter: {
+                allowSearch: true
+            }
+            }]
+    }).dxDataGrid('instance');
+    
+    var applyFilterTypes = [{
+        key: "auto",
+        name: "Immediately"
+    }, {
+        key: "onClick",
+        name: "On Button Click"
+    }];
+    
+    var applyFilterModeEditor = $("#useFilterApplyButton").dxSelectBox({
+        items: applyFilterTypes,
+        value: applyFilterTypes[0].key,
+        valueExpr: "key",
+        displayExpr: "name",
+        onValueChanged: function(data) {
+            dataGrid.option("filterRow.applyFilter", data.value);
+        }
+    }).dxSelectBox("instance");
+    
+    $("#filterRow").dxCheckBox({
+        text: "Filter Row",
+        value: true,
+        onValueChanged: function(data) {
+            dataGrid.clearFilter();
+            dataGrid.option("filterRow.visible", data.value);
+            applyFilterModeEditor.option("disabled", !data.value);
+        }
+    });
+    
+    $("#headerFilter").dxCheckBox({
+        text: "Header Filter",
+        value: true,
+        onValueChanged: function(data) {
+            dataGrid.clearFilter();
+            dataGrid.option("headerFilter.visible", data.value);
+        }
+    });
+    
+    function getOrderDay(rowData) {
+        return (new Date(rowData.OrderDate)).getDay();
+    }
+});
+var input = "<input type='checkbox' class='chk' name='' id='chk-618' value='618'>";
+
+var orders = [
+{
+    "ID": 1,
+    "ALL": input,
+    "NUPCO PO #": 4500012385,
+    "NUPCO PO Item #": 20,
+    "Item Description": '<input class="form-control px-1 text-center" type="text" name="nupco_material_description-618" value="ALBUMIN HUMAN 5% 250ML IV SOLUTION" readonly="">',
+    "NUPCO Gen Code": '<input class="form-control text-center px-1" name="nupco_material-618" value="5113190900300" type="text" readonly="">',
+    "MOH PO": 3989067845,
+    "Item Description": 'others',
+    "MOH Gen Code": 134235678,
+    "PO Qty": 93.00,
+    "PO Delivery Date": "2019-04/02",
+    "Request Qty": '<input class="form-control text-center px-1 request_qty_618" type="number" min="0" max="350.00" name="delivery_qty-618" readonly="">',
+    "Pallet count": '<input class="form-control text-center px-1" type="number" min="0" max="" name="" readonly="">',
+    "Batch": ' <button class="btn btn-warning chk-618in chkss" autofocus="" type="button" data-toggle="modal" data-target="#batch_modal-618" disabled="">Batch</button>'
+}];</script>
+
+</body>
+</html>
