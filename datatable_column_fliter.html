@@ -339,8 +339,11 @@
         return (new Date(rowData.OrderDate)).getDay();
     }
 });
-var input = "<input type='checkbox' class='chk' name='' id='chk-618' value='618'>";
-
+var input = document.createElement("INPUT");
+  input.setAttribute("type", "checkbox");
+  input.setAttribute("value", "");
+  document.body.appendChild(input);
+alert(input);
 var orders = [
 {
     "ID": 1,
@@ -357,7 +360,8 @@ var orders = [
     "Request Qty": '<input class="form-control text-center px-1 request_qty_618" type="number" min="0" max="350.00" name="delivery_qty-618" readonly="">',
     "Pallet count": '<input class="form-control text-center px-1" type="number" min="0" max="" name="" readonly="">',
     "Batch": ' <button class="btn btn-warning chk-618in chkss" autofocus="" type="button" data-toggle="modal" data-target="#batch_modal-618" disabled="">Batch</button>'
-}];</script>
+}];
+</script>
 
 </body>
 </html>
