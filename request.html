@@ -21,6 +21,26 @@
   <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
   
   <link rel="stylesheet" type="text/css" href="assets/lib/style.css">
+   <style type="text/css">
+  .fs_14{
+    font-size: 14px;
+  }
+  @media (min-width: 992px) and (max-width: 1259.98px){
+     .fs_14{
+    font-size: 12px;
+  }
+  }
+  @media (min-width: 1260px) and (max-width: 1367.98px){
+     .fs_14{
+    font-size: 14px;
+  }
+  }
+  @media (min-width: 1368px) and (max-width: 1920.98px){
+    .fs_14{
+    font-size: 16px;
+  }
+  }
+ </style>
 </head>
 <body>
 
@@ -50,79 +70,171 @@
     </nav>
   </header>
   <main>
-  <div class="container-fluid main_div mt-5 pt-4">
-    <div class="row">
-      <div class="col-md-2 col-sm-2 col-12 text-center">
-      
-      </div>
-      <div class="col-md-8 col-sm-8 col-12 text-center">         
-        <h4 class="text-center"><b>Request</b></h4>
-      </div>
-      <div class="col-md-2 col-sm-2 col-12 pb-2 text-center">
-        
-      </div>
+  <div class="container main_div mt-5 pt-4">
+  
+    <div class="text-center">
+      <h5 class="text-center"><b>Request PO</b></h5>
     </div>
-    <div class="mb-4" style="border: 2px solid #dee2e6">
-    <form class="" action="">
-        <div class="row p-2 mx-0">
-          <div class="col-md-3 col-sm-6 col-12">
-           <div class="form-group">
-              <label class=""><b>Moh Po Number :</b></label>
-              <input
-              type="text"
-              class="form-control br_cr"
-              id="mohpo_no" placeholder=""
-              />
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="form-group">
-              <label class=""><b>Date :</b></label>
-              <input
-              type="text"
-              class="form-control br_cr"
-              id="date" placeholder=""
-              />
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-12">
-           <div class="form-group">
-              <label class=""><b>Nupco Po Number :</b></label>
-              <input
-              type="text"
-              class="form-control br_cr"
-              id="nuppo_no" placeholder=""
-              />
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="form-group">
-              <label class=""><b>Date :</b></label>
-              <input
-              type="text"
-              class="form-control br_cr"
-              id="date" placeholder=""
-              />
-            </div>
-          </div>
-          <h5 class="w-100"><b>Dear NUPCO TEAM,</b></h5>
-          <p><b>This is request to you that we are not finding our PO in the Po Lisy, Could you please kindly check and provide the Po for the above reference.</b></p>
-           <div class="col-md-6 col-sm-6 col-12 px-0">
-              <p><b>Thanks</b></p>
-              <p><b>Regards</b></p>
-              <p><b>Vendor Name</b></p>
-            </div>
-            <div class="col-md-6 col-sm-6 col-12 px-0">
-              <p class="mb-0"><b>Additional Comments</b></p>
-              <textarea type="text" class="form-control"></textarea>
-            </div>
-        </div>
-      </form> 
-      </div> <!--========= border close ========-->
+    
+  <div class="row fs_14">
+  <div class="col-md-6">
+  <form class="" action="https://ansara.in/asn3/web/request_po1" method="post" enctype="multipart/form-data">
+    <div class="mb-4" style="border: 2px solid #dee2e6;">
+      <div class="row p-2 mx-0">
+      <p>
+        <span id="nupco">
+        </span></p><p style="text-align: right;" class="mb-1"><b>عزيزي المورد   <br>
+        في حال وجود تعميد من نوبكو ولم يظهر في الموقع، الرجاء كتابة رقم أمر الشراء في الخانه بالاسفل.
+        <br></b></p>
+        <p class="mb-1 "><b>
+        Dear customer,</b><br>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;If you have a NUPCO PO and it does not shown in the page, kindly fill up the PO number and date below:<br>
+        
+      </p>
       
-      <center class="my-3">
-        <button class="btn btn-primary" type="submit" value="submit"> Send Request </button>
-      </center> 
+        
+      <!--<div class="col-md-4 col-sm-6 col-12">
+        <div class="form-group">
+                    <label class=""><b> PO Type :</b></label>
+          <select name="po_type" required class="form-control" onchange="text_display(this.value)">
+            <option value="">Select PO Type</option>
+            <option value="nupco">Nupco</option>
+            <option value="10005">MINISTRY OF HEALTH</option>
+          </select>
+        </div>
+      </div>-->
+        
+        
+      <div class="col-md-6 col-sm-6 col-12">
+        <div class="form-group mb-1">
+          <label class=""><b> PO Number :</b></label>
+          <input type="text" class="form-control form-control-sm br_cr" id="nuppo_no" placeholder="" name="nupco_po_no" required="">
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-12">
+        <div class="form-group mb-1">
+          <label class=""><b>Date :</b></label>
+          <input type="date" class="form-control form-control-sm br_cr" id="date" placeholder="" name="nupco_date" required="">
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-12">
+        <div class="form-group mb-1">
+          <label class=""><b> Supplier Contact Name  :</b></label>
+          <input type="text" class="form-control form-control-sm br_cr" id="nuppo_no" placeholder="" name="name" required="">
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-12">
+        <div class="form-group mb-1">
+          <label class=""><b>Supplier Contact Email :</b></label>
+          <input type="email" class="form-control form-control-sm br_cr" placeholder="" name="email" required="">
+        </div>
+      </div>
+        <!-- <h5 class="w-100"><b>Dear NUPCO TEAM,</b></h5> -->
+        
+
+        
+        <div class=" col-12 px-0">
+        <p class="my-1"><b>Dear NUPCO Team ,</b></p>
+        <p class="">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;This is to request you that we are not finding our PO List.<br>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Could you please kindly check and provide the PO for the above reference.</p>
+          <p><b>Thanks</b></p>
+          <p><b>Regards</b></p>
+          <p><b>Vendor Name : 400008 - JAMJOOM MEDICAL INDUSTRIES CO. LTD.</b></p>
+        </div>
+        <div class="col-md-6 col-sm-6 col-12 px-0">
+          <p class="mb-0"><b>Additional Comments</b></p>
+          <textarea type="text" class="form-control form-control-sm" name="comment" required=""></textarea>
+        </div>
+        <div class="col-md-2 col-sm-6 col-12 px-0"></div>
+        <div class="col-md-4 col-sm-6 col-12 px-0">
+        <button class="btn btn-primary" type="submit" value="submit" name="submit" style="margin-top:35px;">
+        Send Request
+      </button>
+
+        
+    </div>
+      </div>
+    
+    </div>
+    <!--========= border close ========-->
+
+    
+  </form>
+  </div>
+  <div class="col-md-6">
+  <form class="" action="" method="post" enctype="multipart/form-data">
+    <div class="mb-4" style="border: 2px solid #dee2e6;">
+    <div class="row p-2 mx-0">
+    <p><span id="other"><b>
+        </b></span></p><p class="mb-1" style="text-align: right;padding-left: 115px;"><b>عزيزي المورد
+        <br>في حال وجود تعميد من العميل ولم يظهر بالموقع، الرجاء تعبئة المرفق ورفعه.
+        </b></p><b>
+         </b>
+
+        <p class="mb-1"><b>Dear customer,
+        </b><br>
+        <span class="">
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;If you have a customer PO and it does not shown in the page, kindly find the attachment and fill it.
+        </span>
+         </p>
+      <p></p>
+         
+
+        <div class="col-md-6">
+          <div class="form-group mb-1">
+            <label class=""><b>Attachment</b></label>
+          <input type="file" class="form-control form-control-sm" name="form" required="">
+         </div>
+        </div>
+        <div class="col-md-6 text-center">
+          <div class="form-group mb-1">         
+             <a class="btn btn-primary btn-sm mt-4" href="https://ansara.in/asn3/assets/RequestPOTemplate.xlsx" download="">Download Template</a>
+           </div>
+         </div>
+         <br>
+         <div class="col-md-6 col-sm-6 col-12">
+        <div class="form-group mb-1">
+          <label class=""><b> Supplier Contact Name  :</b></label>
+          <input type="text" class="form-control form-control-sm br_cr" id="nuppo_no" placeholder="" name="name" required="">
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-12">
+        <div class="form-group mb-1">
+          <label class=""><b>Supplier Contact Email :</b></label>
+          <input type="email" class="form-control form-control-sm br_cr" placeholder="" name="email" required="">
+        </div>
+      </div>
+
+
+        <div class="col-12 px-0" style="">
+        <p class="my-1"><b>Dear NUPCO Team ,</b></p>
+        <p class="">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+           This is to request you that we are not finding our PO List.
+           <br>
+          &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Could you please kindly check and provide the PO for the above reference.</p>
+          <p><b>Thanks</b></p>
+          <p><b>Regards</b></p>
+          <p><b>Vendor Name : 400008 - JAMJOOM MEDICAL INDUSTRIES CO. LTD.</b></p>
+        </div>
+        
+        
+        <div class="col-md-6 col-sm-6 col-12 px-0">
+          <p class="mb-0"><b>Additional Comments</b></p>
+          <textarea type="text" class="form-control form-control-sm" name="comment" required=""></textarea>
+        </div>
+        <div class="col-md-2 col-sm-6 col-12 px-0"></div>
+        <div class="col-md-4 col-sm-6 col-12 px-0">
+        <button class="btn btn-primary" type="submit" value="submit" name="submit" style="margin-top:35px;">
+        Send Request
+      </button>
+
+        
+    </div>
+    </div>
+  </div>
+    </form>
+    </div>
+  </div>
   </div>
   </main> 
   <footer>
