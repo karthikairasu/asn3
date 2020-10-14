@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Kendo UI Snippet</title>
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.3.915/styles/kendo.default-v2.min.css"/>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.915/js/kendo.all.min.js"></script>
+</head>
+<body>
+  
+   <script src="https://demos.telerik.com/kendo-ui/content/shared/js/products.js"></script>
+    <div id="example">
+      <div id="grid"></div>
+
+      <script>
+        $(document).ready(function() {
+
+          function removeDuplicates(items, field) {
+            var getter = function(item){return item[field]},
+                result = [],
+                index = 0,
+                seen = {};
+
+            while (index < items.length) {
+              var item = items[index++],
+                  text = getter(item);
+
+              if(text !== undefined && text !== null && !seen.hasOwnProperty(text)){
+                result.push(item);
+                seen[text] = true;
+              }
+            }
+
+            return result;
+          }
+
+          var filterSource = new kendo.data.DataSource({
+            data: products
+          });
+
+          $("#grid").kendoGrid({
+            dataSource: {
+              data: products,
+              schema: {
+                model: {
+                  fields: {
+                    ProductName: { type: "string"},
+                    UnitPrice: { type: "number" },
+                    UnitsInStock: { type: "number" },
+                    Discontinued: { type: "boolean" }
+                  }
+                }
+              },
+              pageSize: 20,
+              change: function(e) {
+                filterSource.data(e.items);
+              },
+            },
+            height: 550,
+            scrollable: true,
+            sortable: true,
+            pageable: {
+              input: true,
+              numeric: false
+            },
+            filterable: true,
+            filterMenuInit: function (e){
+              var grid = e.sender;
+              e.container.data("kendoPopup").bind("open", function() {
+                filterSource.sort({field: e.field, dir: "asc"});
+                var uniqueDsResult = removeDuplicates(grid.dataSource.view(), e.field);
+                filterSource.data(uniqueDsResult);
+              })
+            },
+            columns: [
+              {field: "ProductName", filterable: {
+                multi: true,
+                dataSource: filterSource
+              }
+              },
+              { field: "UnitPrice", title: "Unit Price", format: "{0:c}", width: "130px",filterable: {
+                multi: true,
+                dataSource: filterSource
+              } },
+              { field: "UnitsInStock", title: "Units In Stock", width: "130px",filterable: {
+                multi: true,
+                dataSource: filterSource
+              } },
+              { field: "Discontinued", width: "130px"}
+            ]
+          });
+        });
+      </script>
+    </div>
+</body>
+</html>
