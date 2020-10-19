@@ -56,6 +56,7 @@ nav{
     top: 44px;
     z-index: 10;
     padding: 5px 5px!important;
+    white-space: nowrap;
 }
 .table_fixed_height thead{
     background-color: #17A2B8;
@@ -292,3 +293,21 @@ nav{
     text-decoration: none;
     color: #d3d4d6;
 }
+.w_1{width: 1px!important;}
+.w_2{width: 2px!important;}
+.w_3{width: 3px!important;}
+.w_4{width: 4px!important;}
+.w_5{width: 5px!important;}
+.w_6{width: 6px!important;}
+.w_7{width: 7px!important;}
+.w_8{width: 8px!important;}
+.w_9{width: 9px!important;}
+.w_10{width: 10px!important;}
+.w_11{width: 11px!important;}
+.w_12{width: 12px!important;}
+.w_13{width: 13px!important;}
+.w_14{width: 14px!important;}
+.w_{width: 1px;}
+.w_{width: 1px;}
+.w_{width: 1px;}
+.w_{width: 1px;}
