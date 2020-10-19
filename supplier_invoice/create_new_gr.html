@@ -42,10 +42,8 @@
     <link rel="stylesheet" type="text/css" href="../assets/lib/style.css" />
     <style type="text/css">
       .po_list_data .gj-datepicker{
-        flex: 0 0 41.6%;
-      }
-      .po_list_data .gj-datepicker input{
-        max-width: 100%;
+        flex: 0 0 58%;
+        max-width: 54%;
       }
     </style>
   </head>
@@ -73,30 +71,50 @@
           <div class="row">
             <div class="col-md-2 col-sm-2 col-12 text-center"></div>
             <div class="col-md-8 col-sm-8 col-12 text-center">
-              <h4 class="text-center"><b>PO List</b></h4>
+              <h4 class="text-center"><b></b></h4>
             </div>
             <div class="col-md-2 col-sm-2 col-12 pb-2 text-center"></div>
           </div>
           <div class="mb-4" style="border: 2px solid #dee2e6;">
             <form class="" action="">
               <div class="row p-2 mx-0">
-                <div class="col-md-6 col-sm-12 col-12 po_list_data">
-                  <div class="form-row">
-                    <label class="col-md-4 col-sm-4 col-4"><b>Nupco PO Number</b></label>
-                    <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
-                    <input type="text" class="form-control-sm br_cr col-md-5 col-sm-3 col-3" id="" name="" placeholder="search" value="">
-                  </div>
-                  <div class="form-row py-1">
-                    <label class="col-md-4 col-sm-4 col-4"><b>PO Date</b></label>
-                    <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
-                    <input  class="form-control-sm br_cr col-md-7 col-sm-3 col-3 datepicker" name="" placeholder="" value="">
-                  </div>
-                </div>
                 <div class="col-md-6 col-sm-12 col-12">
                   <div class="form-row">
-                    <label class="col-md-4 col-sm-4 col-4"><b>Nupco Material Code</b></label>
+                    <label class="col-md-4 col-sm-4 col-4"><b>Vendor Name</b></label>
                     <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
-                    <input  class="form-control-sm br_cr col-md-6 col-sm-4 col-3" name="" placeholder="search" value="">
+                    <input type="text" class="form-control-sm br_cr col-md-5 col-sm-3 col-3" id="" name="" placeholder="" value="">
+                  </div>
+                  <div class="form-row py-1">
+                    <label class="col-md-4 col-sm-4 col-4"><b>Vendor No</b></label>
+                    <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
+                    <input type="text" class="form-control-sm br_cr col-md-5 col-sm-3 col-3" name="" placeholder="" value="">
+                  </div>
+                  <div class="form-row">
+                    <label class="col-md-4 col-sm-4 col-4"><b>GR Number</b></label>
+                    <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
+                    <input type="text" class="form-control-sm br_cr col-md-5 col-sm-3 col-3" name="" placeholder="" value="">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-12 po_list_data">
+                  <div class="form-row">
+                    <label class="col-md-4 col-sm-4 col-4"><b>PO Delivery Date</b></label>
+                    <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
+                    <input  class="form-control-sm br_cr col-md-6 col-sm-4 col-3 datepicker" name="" placeholder="" value="">
+                  </div>
+                  <div class="form-row py-1">
+                    <label class="col-md-4 col-sm-4 col-4"><b>Gr Document Date</b></label>
+                    <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
+                    <input class="form-control-sm br_cr col-md-6 col-sm-4 col-3 datepicker" name="" placeholder="" value="">
+                  </div>
+                  <div class="form-row py-1">
+                    <label class="col-md-4 col-sm-4 col-4"><b>Invoice No</b></label>
+                    <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
+                    <input type="text" class="form-control-sm br_cr col-md-4 col-sm-3 col-3" name="" placeholder="" value="">
+                  </div>
+                  <div class="form-row py-1">
+                    <label class="col-md-4 col-sm-4 col-4"><b>Attach Invoice</b></label>
+                    <label class="col-md-1 col-sm-1 col-1 px-0">:</label>
+                    <input type="file" class="form-control form-control-sm br_cr col-md-4 col-sm-3 col-3" name="" placeholder="" value="">
                   </div>
                 </div>
               </div>
@@ -107,56 +125,45 @@
             <table id="example" class="table table-bordered mx-auto mb-0">
               <thead class="bg-info text-white">
                 <tr>
-                  <th>All&ensp;<input type="checkbox" name="" value="" /></th>
-                  <th>NUPCO PO No</th>
-                  <th>Total Value</th>
-                  <th>Po Date</th>
-                  <th>Plant</th>
-                  <th>Po qty</th>
-                  <th>Delivery Qty</th>
-                  <th>Remaining Qty</th>
+                  <th>All</th>
+                  <th>NUPCO PO #</th>
+                  <th>NUPCO PO Item #</th>
+                  <th>Item Description</th>
+                  <th>NUPCO Gen Code</th>
+                  <th>GR Qty</th>
+                  <th>GR Value</th>
+                  <th>Currency</th>
                 </tr>
               </thead>
 
               <tbody style="cursor: pointer;">
                 <tr>
+                  <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015950'" -->
                   <td>
                     <input type="checkbox" name="po_no[]" value="4500015950" />
                   </td>
                   <td>4500015950</td>
-                  <td>7,872,723.04</td>
+                  <td>113453456</td>
 
-                  <td>2020-04-08</td>
-                  <td>E1C2</td>
-                  <td>4,261,570.00</td>
-                  <td>150,224.00</td>
-                  <td>4,111,346.00</td>
+                  <td>Description</td>
+                  <td>4324342432</td>
+                  <td>78</td>
+                  <td>value</td>
+                  <td>SAR</td>
                 </tr>
                 <tr>
+                  <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015950'" -->
                   <td>
                     <input type="checkbox" name="po_no[]" value="4500015950" />
                   </td>
                   <td>4500015950</td>
-                  <td>7,872,723.04</td>
+                  <td>113453456</td>
 
-                  <td>2020-04-08</td>
-                  <td>E1C2</td>
-                  <td>4,261,570.00</td>
-                  <td>150,224.00</td>
-                  <td>4,111,346.00</td>
-                </tr>
-                <tr>
-                  <td>
-                    <input type="checkbox" name="po_no[]" value="4500015950" />
-                  </td>
-                  <td>4500015950</td>
-                  <td>7,872,723.04</td>
-
-                  <td>2020-04-08</td>
-                  <td>E1C2</td>
-                  <td>4,261,570.00</td>
-                  <td>150,224.00</td>
-                  <td>4,111,346.00</td>
+                  <td>Description</td>
+                  <td>4324342432</td>
+                  <td>78</td>
+                  <td>value</td>
+                  <td>SAR</td>
                 </tr>
               </tbody>
             </table>
@@ -168,15 +175,15 @@
               type="submit"
               value="submit"
             >
-              Create Invoice
+              Back
             </a>
             <a
               class="btn btn-primary"
-              href="../request.html"
+              href="select_item.html"
               type="submit"
               value="submit"
             >
-              Request Po
+              Submit Invoice
             </a>
           </center>
         </div>

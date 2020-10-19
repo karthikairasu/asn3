@@ -48,6 +48,13 @@
       .dataTables_wrapper .dataTables_length label {
           visibility: hidden!important;
       }
+
+      .table_fixed_height {
+          max-height: 70vh!important;
+          overflow-y: auto;
+          width: 100%;
+          border-bottom: 1px solid #dcdcdc;
+      }
     </style>
   </head>
   <body>
@@ -83,12 +90,12 @@
             <table id="example" class="table table-bordered mx-auto mb-0">
               <thead class="bg-info text-white">
                 <tr>
-                  <th class="w_7">All</th>
+                  <th class="w_7">All&ensp;<input type="checkbox" name="" value="" /></th>
                   <th class="w_7">PO #</th>
                   <th class="w_7">PO Item #</th>
                   <th class="w_8">Plant</th>
                   <th class="w_7">Sloc</th>
-                  <th class="w_7">Material</th>
+                  <th class="w_7">Material No</th>
                   <th class="w_7">Material Description</th>
                   <th class="w_7">Order Qty</th>
                   <th class="w_7">UOM</th>
@@ -115,12 +122,12 @@
                   <td>plant</td>
                   <!-- <td>2020-07-11</td> -->
                   <td>sloc</td>
-                  <td>material</td>
+                  <td>11234563</td>
                   <td>material des</td>
                   <td>order qty</td>
-                  <td>12</td>
+                  <td>BOX</td>
                   <td>4122.00</td>
-                  <td>value</td>
+                  <td>2168.10</td>
                   <td>22-07-2020</td>
                   <td>253525</td>
                   <td>type</td>
@@ -139,12 +146,12 @@
                   <td>plant</td>
                   <!-- <td>2020-07-11</td> -->
                   <td>sloc</td>
-                  <td>material</td>
+                  <td>11234563</td>
                   <td>material des</td>
                   <td>order qty</td>
-                  <td>12</td>
+                  <td>BOX</td>
                   <td>4122.00</td>
-                  <td>value</td>
+                  <td>2168.10</td>
                   <td>22-07-2020</td>
                   <td>253525</td>
                   <td>type</td>
@@ -163,12 +170,12 @@
                   <td>plant</td>
                   <!-- <td>2020-07-11</td> -->
                   <td>sloc</td>
-                  <td>material</td>
+                  <td>11234563</td>
                   <td>material des</td>
                   <td>order qty</td>
-                  <td>12</td>
+                  <td>BOX</td>
                   <td>4122.00</td>
-                  <td>value</td>
+                  <td>2168.10</td>
                   <td>22-07-2020</td>
                   <td>253525</td>
                   <td>type</td>
@@ -187,12 +194,12 @@
                   <td>plant</td>
                   <!-- <td>2020-07-11</td> -->
                   <td>sloc</td>
-                  <td>material</td>
+                  <td>11234563</td>
                   <td>material des</td>
                   <td>order qty</td>
-                  <td>12</td>
+                  <td>BOX</td>
                   <td>4122.00</td>
-                  <td>value</td>
+                  <td>2168.10</td>
                   <td>22-07-2020</td>
                   <td>253525</td>
                   <td>type</td>
@@ -211,12 +218,12 @@
                   <td>plant</td>
                   <!-- <td>2020-07-11</td> -->
                   <td>sloc</td>
-                  <td>material</td>
+                  <td>11234563</td>
                   <td>material des</td>
                   <td>order qty</td>
-                  <td>12</td>
+                  <td>BOX</td>
                   <td>4122.00</td>
-                  <td>value</td>
+                  <td>2168.10</td>
                   <td>22-07-2020</td>
                   <td>253525</td>
                   <td>type</td>
@@ -235,12 +242,12 @@
                   <td>plant</td>
                   <!-- <td>2020-07-11</td> -->
                   <td>sloc</td>
-                  <td>material</td>
+                  <td>11234563</td>
                   <td>material des</td>
                   <td>order qty</td>
-                  <td>12</td>
+                  <td>BOX</td>
                   <td>4122.00</td>
-                  <td>value</td>
+                  <td>2168.10</td>
                   <td>22-07-2020</td>
                   <td>253525</td>
                   <td>type</td>
@@ -259,228 +266,12 @@
                   <td>plant</td>
                   <!-- <td>2020-07-11</td> -->
                   <td>sloc</td>
-                  <td>material</td>
+                  <td>11234563</td>
                   <td>material des</td>
                   <td>order qty</td>
-                  <td>12</td>
+                  <td>BOX</td>
                   <td>4122.00</td>
-                  <td>value</td>
-                  <td>22-07-2020</td>
-                  <td>253525</td>
-                  <td>type</td>
-                  <td>21232</td>
-                  <td>23</td>
-                  <td>value</td>
-                </tr>
-                <tr>
-                  <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015950'" -->
-                  <td>
-                    <input type="checkbox" name="po_no[]" value="4500015950" />
-                  </td>
-                  <td>4500015950</td>
-                  <td>123</td>
-
-                  <td>plant</td>
-                  <!-- <td>2020-07-11</td> -->
-                  <td>sloc</td>
-                  <td>material</td>
-                  <td>material des</td>
-                  <td>order qty</td>
-                  <td>12</td>
-                  <td>4122.00</td>
-                  <td>value</td>
-                  <td>22-07-2020</td>
-                  <td>253525</td>
-                  <td>type</td>
-                  <td>21232</td>
-                  <td>23</td>
-                  <td>value</td>
-                </tr>
-                <tr>
-                  <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015950'" -->
-                  <td>
-                    <input type="checkbox" name="po_no[]" value="4500015950" />
-                  </td>
-                  <td>4500015950</td>
-                  <td>123</td>
-
-                  <td>plant</td>
-                  <!-- <td>2020-07-11</td> -->
-                  <td>sloc</td>
-                  <td>material</td>
-                  <td>material des</td>
-                  <td>order qty</td>
-                  <td>12</td>
-                  <td>4122.00</td>
-                  <td>value</td>
-                  <td>22-07-2020</td>
-                  <td>253525</td>
-                  <td>type</td>
-                  <td>21232</td>
-                  <td>23</td>
-                  <td>value</td>
-                </tr>
-                <tr>
-                  <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015950'" -->
-                  <td>
-                    <input type="checkbox" name="po_no[]" value="4500015950" />
-                  </td>
-                  <td>4500015950</td>
-                  <td>123</td>
-
-                  <td>plant</td>
-                  <!-- <td>2020-07-11</td> -->
-                  <td>sloc</td>
-                  <td>material</td>
-                  <td>material des</td>
-                  <td>order qty</td>
-                  <td>12</td>
-                  <td>4122.00</td>
-                  <td>value</td>
-                  <td>22-07-2020</td>
-                  <td>253525</td>
-                  <td>type</td>
-                  <td>21232</td>
-                  <td>23</td>
-                  <td>value</td>
-                </tr>
-                <tr>
-                  <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015950'" -->
-                  <td>
-                    <input type="checkbox" name="po_no[]" value="4500015950" />
-                  </td>
-                  <td>4500015950</td>
-                  <td>123</td>
-
-                  <td>plant</td>
-                  <!-- <td>2020-07-11</td> -->
-                  <td>sloc</td>
-                  <td>material</td>
-                  <td>material des</td>
-                  <td>order qty</td>
-                  <td>12</td>
-                  <td>4122.00</td>
-                  <td>value</td>
-                  <td>22-07-2020</td>
-                  <td>253525</td>
-                  <td>type</td>
-                  <td>21232</td>
-                  <td>23</td>
-                  <td>value</td>
-                </tr>
-                <tr>
-                  <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015950'" -->
-                  <td>
-                    <input type="checkbox" name="po_no[]" value="4500015950" />
-                  </td>
-                  <td>4500015950</td>
-                  <td>123</td>
-
-                  <td>plant</td>
-                  <!-- <td>2020-07-11</td> -->
-                  <td>sloc</td>
-                  <td>material</td>
-                  <td>material des</td>
-                  <td>order qty</td>
-                  <td>12</td>
-                  <td>4122.00</td>
-                  <td>value</td>
-                  <td>22-07-2020</td>
-                  <td>253525</td>
-                  <td>type</td>
-                  <td>21232</td>
-                  <td>23</td>
-                  <td>value</td>
-                </tr>
-                <tr>
-                  <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015950'" -->
-                  <td>
-                    <input type="checkbox" name="po_no[]" value="4500015950" />
-                  </td>
-                  <td>4500015950</td>
-                  <td>123</td>
-
-                  <td>plant</td>
-                  <!-- <td>2020-07-11</td> -->
-                  <td>sloc</td>
-                  <td>material</td>
-                  <td>material des</td>
-                  <td>order qty</td>
-                  <td>12</td>
-                  <td>4122.00</td>
-                  <td>value</td>
-                  <td>22-07-2020</td>
-                  <td>253525</td>
-                  <td>type</td>
-                  <td>21232</td>
-                  <td>23</td>
-                  <td>value</td>
-                </tr>
-                <tr>
-                  <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015950'" -->
-                  <td>
-                    <input type="checkbox" name="po_no[]" value="4500015950" />
-                  </td>
-                  <td>4500015950</td>
-                  <td>123</td>
-
-                  <td>plant</td>
-                  <!-- <td>2020-07-11</td> -->
-                  <td>sloc</td>
-                  <td>material</td>
-                  <td>material des</td>
-                  <td>order qty</td>
-                  <td>12</td>
-                  <td>4122.00</td>
-                  <td>value</td>
-                  <td>22-07-2020</td>
-                  <td>253525</td>
-                  <td>type</td>
-                  <td>21232</td>
-                  <td>23</td>
-                  <td>value</td>
-                </tr>
-                <tr>
-                  <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015950'" -->
-                  <td>
-                    <input type="checkbox" name="po_no[]" value="4500015950" />
-                  </td>
-                  <td>4500015950</td>
-                  <td>123</td>
-
-                  <td>plant</td>
-                  <!-- <td>2020-07-11</td> -->
-                  <td>sloc</td>
-                  <td>material</td>
-                  <td>material des</td>
-                  <td>order qty</td>
-                  <td>12</td>
-                  <td>4122.00</td>
-                  <td>value</td>
-                  <td>22-07-2020</td>
-                  <td>253525</td>
-                  <td>type</td>
-                  <td>21232</td>
-                  <td>23</td>
-                  <td>value</td>
-                </tr>
-                <tr>
-                  <!-- onclick="window.location.href='https://ansara.in/asn2c/web/create_new_gr/4500015950'" -->
-                  <td>
-                    <input type="checkbox" name="po_no[]" value="4500015950" />
-                  </td>
-                  <td>4500015950</td>
-                  <td>123</td>
-
-                  <td>plant</td>
-                  <!-- <td>2020-07-11</td> -->
-                  <td>sloc</td>
-                  <td>material</td>
-                  <td>material des</td>
-                  <td>order qty</td>
-                  <td>12</td>
-                  <td>4122.00</td>
-                  <td>value</td>
+                  <td>2168.10</td>
                   <td>22-07-2020</td>
                   <td>253525</td>
                   <td>type</td>
@@ -502,7 +293,7 @@
             </a>
             <a
               class="btn btn-primary"
-              href=""
+              href="create_new_gr.html"
               type="submit"
               value="submit"
             >
